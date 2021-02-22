@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "miflow.dataservice"
+version = "0.1.0"
+description = ""
+authors = ["이준환 <joonhwan.lee@mirero.co.kr>"]
+packages = [
+    { include = "miflow", from = "src" }
+]
+
+[tool.poetry.scripts]
+miflow_dataservice = "miflow.dataservice.main:main"
+
+[tool.poetry.dependencies]
+python = "^3.7"
+fastapi = "^0.63.0"
+uvicorn = "^0.13.3"
+"miflow.common" = {path = "../miflow.common" }
+"miflow.util" = {path = "../miflow.util" }
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+autopep8 = "^1.5.5"
+pipx = "^0.16.0"
+shiv = "^0.4.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
